@@ -13,6 +13,7 @@ int main(void) {
     printf("%s\n", my_strcpy(DEFAULT_STR));
     printf("\"%c\" no indice %ld\n", my_strpbrk(DEFAULT_STR, "gW")[0], my_strpbrk(DEFAULT_STR, "gW") - DEFAULT_STR);
     printf("%s\n", my_strncpy(dest, sizeof(dest) / sizeof(dest[0]), DEFAULT_STR + 6, 5));
+    printf("%d\n", my_strcmp(DEFAULT_STR, "Hellg", 5));
 
     return 0;
 }

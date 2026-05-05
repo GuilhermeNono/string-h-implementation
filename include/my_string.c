@@ -67,4 +67,15 @@ char *my_strncpy(char *dst, const size_t dst_sz, const char *src, size_t n) {
     return dst;
 }
 
+int my_strcmp(const char *str1, const char *str2, const size_t count) {
 
+    if (count == 0) return 0;
+
+    size_t i = 0;
+
+    while (i < count - 1 && str1[i] != '\0' && str1[i] == str2[i]) {
+        i++;
+    }
+
+    return (unsigned char)str1[i] - (unsigned char)str2[i];
+}

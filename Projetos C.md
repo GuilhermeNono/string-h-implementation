@@ -29,18 +29,12 @@ Aqui reside o maior perigo de **Buffer Overflow** e corrupção de memória.
 - **`strcpy` (String Copy):** Copia os bytes da fonte para o destino, incluindo o nulo. Ela pressupõe que o destino tem espaço suficiente. Se o destino for menor, você sobrescreverá o **Stack Frame** ou o **Heap**, causando comportamento indefinido.
     
 - **`strncpy`:** Uma versão "segura" que limita a cópia a $n$ bytes. Entretanto, ela possui uma armadilha de design: se o limite $n$ for atingido antes do nulo, a string resultante **não terá** um terminador nulo, o que é uma vulnerabilidade latente.
-    
-- **`strdup` (String Duplicate):** Uma função que interage com o **Heap**. Ela calcula o tamanho necessário, chama `malloc` e copia a string. Implementá-la exige que você gerencie a falha na alocação (retorno `NULL`).
-    
 
 #### 3. Funções de Comparação e Ordem Lexicográfica
 
 Essas funções são cruciais para algoritmos de ordenação e busca.
 
-- **`strcmp` (String Compare):** Compara byte a byte até encontrar uma diferença ou o terminador nulo. O retorno é a diferença aritmética entre os dois bytes (baseado na tabela ASCII/UTF-8). Se o retorno for $0$, os conteúdos na memória são idênticos.
-    
-- **`strncmp`:** Realiza a mesma comparação, mas limitada a $n$ bytes. É essencial para verificar prefixos ou comandos em protocolos de rede.
-    
+- **`strcmp` (String Compare):** Compara byte a byte até encontrar uma diferença ou o terminador nulo. O retorno é a diferença aritmética entre os dois bytes (baseado na tabela ASCII/UTF-8). Se o retorno for $0$, os conteúdos na memória são idênticos. 
 
 #### 4. Funções de Busca e Tokenização
 
